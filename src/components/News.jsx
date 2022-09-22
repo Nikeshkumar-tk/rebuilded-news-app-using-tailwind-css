@@ -50,7 +50,7 @@ const News = ({searchKey}) => {
   },[searchKey])
  
   return (
-    <div className='w-screen sm:grid md:grid-cols-2 xl:grid-cols-3 pt-10 px-10'>
+    <div className='w-screen sm:grid md:grid-cols-2 xl:grid-cols-3 pt-20 px-10'>
        {
 news.map((news)=>{
 // console.log(news.image.thumbnail.contentUrl)

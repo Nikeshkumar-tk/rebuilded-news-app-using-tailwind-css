@@ -35,8 +35,8 @@ const Navbar = ({setSearchKey}) => {
   return (
 
 
-    <div>
-    <div className={`p-5 flex flex-col z-20 gap-y-20 h-screen bg-red-400 text-black w-48 mr-0 fixed top-0 right-0 ${!sideMenu?'translate-x-48':'-translate-x-42'} transition duration-300 sm:hidden`}>
+    <div className='fixed w-screen bg-gray-500 z-10'>
+    <span className={`p-5 flex flex-col z-20 gap-y-20 h-screen bg-red-400 text-black w-48 mr-0 fixed top-0 right-0 ${!sideMenu?'translate-x-48':'-translate-x-42'} transition duration-300 sm:hidden`}>
      <div onClick={()=>setSideMenu(false)} className="w-full text-2xl ">
 
       <i className="cursor-pointer fa-solid fa-arrow-right"></i>
@@ -52,10 +52,10 @@ const Navbar = ({setSearchKey}) => {
     
      </ul>
       
-      </div>
+      </span>
 
 
-    <div className='h-20 w-screen flex justify-evenly items-center shadow-md sm:justify-between'>
+    <div className='h-20 w-full  flex justify-evenly items-center shadow-md sm:justify-between'>
         <div className='text-2xl pl-32 sm:ml-0 sm:mr-10'>
             <h3 className='font-mono text-red-300 whitespace-nowrap'>Nik News</h3>
 
