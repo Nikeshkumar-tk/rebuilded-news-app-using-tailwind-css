@@ -13,35 +13,37 @@ const News = ({searchKey}) => {
 
     //Function to fetch news
 
-  const fetchNews=async()=>{
+  
+  useEffect(()=>{
+
+    const fetchNews=async()=>{
   
 
-    await axios.request(
-      {
-       method: 'GET',
-       url: 'https://bing-news-search1.p.rapidapi.com/news/search',
-       params: {
-         q: `${searchKey||"trending"}`,
-         freshness: 'Day',
-         originalImg: 'true',
-         textFormat: 'Raw',
-         safeSearch: 'Off'
-       },
-       headers: {
-         'X-BingApis-SDK': 'true',
-         'X-RapidAPI-Key': '39917aa29amshb5bebf0758c9345p197919jsn308218859cd1',
-         'X-RapidAPI-Host': 'bing-news-search1.p.rapidapi.com'
-       }
-      }
-     ).then((res)=>{
+      await axios.request(
+        {
+         method: 'GET',
+         url: 'https://bing-news-search1.p.rapidapi.com/news/search',
+         params: {
+           q: `${searchKey||"trending"}`,
+           freshness: 'Day',
+           originalImg: 'true',
+           textFormat: 'Raw',
+           safeSearch: 'Off'
+         },
+         headers: {
+           'X-BingApis-SDK': 'true',
+           'X-RapidAPI-Key': '39917aa29amshb5bebf0758c9345p197919jsn308218859cd1',
+           'X-RapidAPI-Host': 'bing-news-search1.p.rapidapi.com'
+         }
+        }
+       ).then((res)=>{
+        
+        console.log(res)
+        setNews(res.data.value)
       
-      console.log(res)
-      setNews(res.data.value)
-    
-    })
-
-  }
-  useEffect(()=>{
+      })
+  
+    }
 
     fetchNews()
     
